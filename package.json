@@ -1,0 +1,22 @@
+{
+  "name": "cause-code-test",
+  "version": "1.0.0",
+  "description": "A simple bug tracker for cause code",
+  "main": "server.js",
+  "scripts": {
+    "start": "babel-node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ishan Saxena",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongodb": "^3.0.10",
+    "mongoose": "^5.1.4",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
