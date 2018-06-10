@@ -1,0 +1,18 @@
+.add-button {
+    border: none;
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    background: indigo;
+    color: white;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+    display: block;
+    bottom: 50px;
+    right: 50px;
+    position: absolute;
+}
+
+.add-button:hover {
+    background: rgb(105, 2, 179);
+}

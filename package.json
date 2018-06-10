@@ -4,19 +4,29 @@
   "description": "A simple bug tracker for cause code",
   "main": "server.js",
   "scripts": {
-    "start": "babel-node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "author": "Ishan Saxena",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "mongodb": "^3.0.10",
     "mongoose": "^5.1.4",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "redux-promise-middleware": "^5.1.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0"
+    "babel-cli": "^6.26.0",
+    "redux-logger": "^3.0.6"
   }
 }
