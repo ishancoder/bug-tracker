@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import RepoList from "../RepoList/RepoList";
 import AddButton from "../AddButton/AddButton";
+import AddRepoModal from "../AddRepoModal/AddRepoModal";
 import {fetchRepos} from "../../actions/actions";
+import {toggleModal, modalDataChange, toggleEditing} from "../../actions/AddRepoModalAction";
 import {connect} from "react-redux";
 import './App.css';
 
@@ -13,7 +15,12 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchRepos: () => dispatch(fetchRepos())
+    fetchRepos: () => dispatch(fetchRepos()),
+    toggleModal: () => {
+      dispatch(toggleEditing(false));
+      dispatch(toggleModal());
+    },
+    modalDataChange: (data) => dispatch(modalDataChange(data))
   }
 };
 
@@ -25,10 +32,11 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
+        <AddRepoModal onClose={this.props.toggleModal}/>
         <div className="app">
-          <RepoList repos={this.props.repos} />
+          <RepoList repos={this.props.repos}/>
         </div>
-        <AddButton />
+        <AddButton onClick={this.props.toggleModal}/>
       </div>
     );
   }

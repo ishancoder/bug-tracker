@@ -1,4 +1,15 @@
 .repo-list-container {
     width: 100%;
     max-width: 800px;
+    padding: 0.5em;
+    overflow-y: scroll;
+}
+
+.repo-list-container .no-repo-message {
+    text-align: center;
+    color: gray;
+}
+
+.repo-list-container .no-repo-message i {
+    font-size: 8em;
 }

@@ -1,0 +1,17 @@
+.add-repo-modal {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    z-index: 2;
+    top: -100vh;
+    transition: all 300ms ease-in-out;
+}
+
+.add-repo-modal.show {
+    top: 0;
+}
