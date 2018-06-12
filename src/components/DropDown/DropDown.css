@@ -1,0 +1,9 @@
+.drop-down {
+    padding: 0.5em;
+    color: white;
+    background: indigo;
+    border-radius: 50px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+}

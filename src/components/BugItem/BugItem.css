@@ -1,0 +1,36 @@
+.bug-item {
+    padding: 2em;
+    display: flex;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0px 10px 20px -5px gray;
+}
+
+.bug-item .criticality {
+    width: 10%;
+    text-align: center;
+}
+
+.bug-item .bug-name {
+    width: 60%;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+.bug-item .actions {
+    width: 30%;
+    text-align: center;
+}
+
+.bug-item .actions i {
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+.bug-item .actions i:hover {
+    transform: scale(1.5);
+    color: red;
+}

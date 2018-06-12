@@ -34,6 +34,9 @@ class App extends Component {
       <div className="app-container">
         <AddRepoModal onClose={this.props.toggleModal}/>
         <div className="app">
+          <div className="header">
+            Let's Keep Track of Bugs! <span role="img" aria-label="Ant Emoji" aria-labelledby="jsx-ally/accessible-emoji">🦗</span>
+          </div>
           <RepoList repos={this.props.repos}/>
         </div>
         <AddButton onClick={this.props.toggleModal}/>

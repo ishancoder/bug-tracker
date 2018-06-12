@@ -19,6 +19,7 @@ const AddRepoModalReducer = function(state={...initState}, action) {
             state = {...state, data: action.payload};
             break;
         case repoBugActions.ADD_REPO_FULFILLED:
+        case repoBugActions.UPDATE_REPO_FULFILLED:
             state = {...initState};
             break;
         default:

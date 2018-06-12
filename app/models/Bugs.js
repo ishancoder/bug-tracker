@@ -7,13 +7,8 @@ let bugSchema = new mongoose.Schema({
     resolved: {type: Boolean, default: false},
 });
 
-bugSchema.methods.markResolved = function(cb) {
-    this.resolved = true;
-    this.save(cb);
-};
-
-bugSchema.methods.changeCriticality = function(newCriticality, cb) {
-    this.criticality = newCriticality;
+bugSchema.methods.toggleResolved = function(cb) {
+    this.resolved = !this.resolved;
     this.save(cb);
 };
 

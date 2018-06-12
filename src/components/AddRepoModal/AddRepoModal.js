@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
-import {addRepo} from "../../actions/actions";
+import {addRepo, updateRepo} from "../../actions/actions";
 import {toggleModal, modalDataChange} from "../../actions/AddRepoModalAction";
 import {connect} from "react-redux";
 import "./AddRepoModal.css";
@@ -18,7 +18,8 @@ const mapDispatchToProps = dispatch => {
     return {
         addRepo: (repo) => dispatch(addRepo(repo)),
         toggleModal: () => dispatch(toggleModal()),
-        modalDataChange: (data) => dispatch(modalDataChange(data))
+        modalDataChange: (data) => dispatch(modalDataChange(data)),
+        editRepo: (repo) => dispatch(updateRepo(repo._id, repo))
     };
 };
 
@@ -31,22 +32,21 @@ class AddRepoModal extends Component {
         }
     };
 
-    handleClose = () => {
-        this.props.toggleModal();
-    };
-
-    handleAdd = () => {
-        this.props.addRepo(this.props.data);
+    handleAddEdit = () => {
+        if(this.props.editing)
+            this.props.editRepo(this.props.data);
+        else
+            this.props.addRepo(this.props.data);
     };
 
     render() {
         return (
             <div className={"add-repo-modal "+ (this.props.open ? "show" : "")}>
-                <span onClick={this.handleClose} style={{position: "absolute", top: "20px", right: "20px", fontSize:"2em", cursor: "pointer"}}><i className="fas fa-times"></i></span>
+                <span onClick={this.props.toggleModal} style={{position: "absolute", top: "20px", right: "20px", fontSize:"2em", cursor: "pointer"}}><i className="fas fa-times"></i></span>
                 <h3>{(this.props.editing) ? "Edit " : "Add"} Repository Details</h3>
                 <Input name="name" value={this.props.data.name} handleChange={this.handleChange} placeholder="Repository Name..." />
                 <Input name="url" value={this.props.data.url} handleChange={this.handleChange} placeholder="Repository URL..." />
-                <Button value="ADD" onClick={this.handleAdd}/>
+                <Button value={this.props.editing ? "EDIT" : "ADD"} onClick={this.handleAddEdit}/>
             </div>
         )
     }

@@ -32,24 +32,26 @@ class RepoItem extends Component {
     };
 
     handleDelete = ()=> {
-        this.props.removeRepo(this.props.repo);
+        this.props.removeRepo(this.props.repo._id);
     };
 
     render() {
         return (
-            <Link className="repo-item" to={"/repos/" + this.props.repo._id}>
+            <div className="repo-item">
+                <Link className="repo-link" to={"/repos/" + this.props.repo._id}>
                 <div className="repo-type">
                     {this.getRepoAvatar()}
                 </div>
                 <div className="content">
                     <h3>{this.props.repo.name}</h3>
-                    <span><i className="fas fa-bug"></i> BUGS :- {this.props.repo.bugs.length}</span>
+                    <span><i className="fas fa-bug"></i> Unresolved Bugs : {this.props.repo.activeBugs}</span>
                 </div>
+                </Link>
                 <div className="actions">
                     <span onClick={this.handleEdit}><i className="fas fa-pencil-alt"></i></span> 
                     <span onClick={this.handleDelete}><i className="far fa-trash-alt"></i></span>
                 </div>
-            </Link>
+            </div>
         );
     }
 }

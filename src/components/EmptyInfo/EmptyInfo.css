@@ -1,0 +1,8 @@
+.empty-info-message {
+    text-align: center;
+    color: gray;
+}
+
+.empty-info-message i {
+    font-size: 8em;
+}

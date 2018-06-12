@@ -8,8 +8,8 @@
     cursor: pointer;
     transition: all 100ms ease-in-out;
     display: block;
-    bottom: 50px;
-    right: 50px;
+    bottom: 30px;
+    right: 30px;
     position: absolute;
     outline: none;
 }
