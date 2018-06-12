@@ -24,7 +24,7 @@ class RepoItem extends Component {
         } else if(this.props.repo.url.indexOf("bitbucket.com") >= 0) {
             return <i style={{color: "blue"}} className="fab fa-bitbucket"></i>
         } else {
-            return <i style={{color: "black"}} className="fab fa-github"></i>
+            return <i style={{color: "black"}} className="fas fa-question"></i>
         }
     };
 

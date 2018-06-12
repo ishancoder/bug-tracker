@@ -23,6 +23,7 @@ let jsonParser = bodyParser.json();
 let urlencodedParser = bodyParser.urlencoded({extended: false});
 
 app.use(cors({origin: 'http://localhost:3001'}))
+app.use(express.static('build'));
 app.use(morgan());
 app.use(jsonParser);
 app.use(urlencodedParser);
