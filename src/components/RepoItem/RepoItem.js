@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 import {toggleModal, toggleEditing, modalDataChange} from "../../actions/AddRepoModalAction";
 import {connect} from "react-redux";
 import { removeRepo } from "../../actions/actions";
@@ -55,5 +56,15 @@ class RepoItem extends Component {
         );
     }
 }
+
+RepoItem.propTypes = {
+    repo: PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+        activeBugs: PropTypes.number.isRequired,
+        bugs: PropTypes.arrayOf(PropTypes.string).isRequired,
+    }).isRequired
+};
 
 export default connect(null, mapDispatchToProps)(RepoItem);

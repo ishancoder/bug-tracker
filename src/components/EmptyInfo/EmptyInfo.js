@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 import "./EmptyInfo.css";
 
 class EmptyInfo extends Component {
@@ -11,5 +12,9 @@ class EmptyInfo extends Component {
         );
     }
 }
+
+EmptyInfo.propTypes = {
+    message: PropTypes.string,
+};
 
 export default EmptyInfo;

@@ -32,7 +32,7 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-        <AddRepoModal onClose={this.props.toggleModal}/>
+        <AddRepoModal/>
         <div className="app">
           <div className="header">
             Let's Keep Track of Bugs! <span role="img" aria-label="Ant Emoji" aria-labelledby="jsx-ally/accessible-emoji">🦗</span>

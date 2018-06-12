@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 import RepoItem from "../RepoItem/RepoItem";
 import EmptyInfo from "../EmptyInfo/EmptyInfo";
 import "./RepoList.css";
@@ -15,5 +16,9 @@ class RepoList extends Component {
         );
     }
 }
+
+RepoList.propTypes = {
+    repos: PropTypes.arrayOf(PropTypes.object).isRequired
+};
 
 export default RepoList;

@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 import BugItem from "../BugItem/BugItem";
 import EmptyInfo from "../EmptyInfo/EmptyInfo";
 import "./BugList.css";
@@ -28,5 +29,9 @@ class BugList extends Component {
         </div>);
     }
 }
+
+BugList.propTypes = {
+    bugs: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
 
 export default BugList;

@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 import {removeBug, toggleResolve} from "../../actions/actions";
 import {connect} from "react-redux";
 import "./BugItem.css";
@@ -43,5 +44,15 @@ class BugItem extends Component {
         );
     }
 }
+
+BugItem.propTypes = {
+    bug: PropTypes.shape({
+        _id: PropTypes.string.isRequired,
+        bugName: PropTypes.string.isRequired,
+        repo: PropTypes.string.isRequired,
+        resolved: PropTypes.bool.isRequired,
+        criticality: PropTypes.number.isRequired,
+    }).isRequired
+};
 
 export default connect(null, mapDispatchToProps)(BugItem);
