@@ -16,7 +16,7 @@ router.get('/repos', (req, res, next)=>{
 router.post('/repos', (req, res, next)=>{
     let repo = new Repos(req.body);
     repo.save((err, data)=>{
-        if(err) return next(err);
+        if(err) next(err);
         res.json(data);
     });
 });

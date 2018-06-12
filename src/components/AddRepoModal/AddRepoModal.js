@@ -44,8 +44,8 @@ class AddRepoModal extends Component {
             <div className={"add-repo-modal "+ (this.props.open ? "show" : "")}>
                 <span onClick={this.props.toggleModal} style={{position: "absolute", top: "20px", right: "20px", fontSize:"2em", cursor: "pointer"}}><i className="fas fa-times"></i></span>
                 <h3>{(this.props.editing) ? "Edit " : "Add"} Repository Details</h3>
-                <Input name="name" value={this.props.data.name} handleChange={this.handleChange} placeholder="Repository Name..." />
-                <Input name="url" value={this.props.data.url} handleChange={this.handleChange} placeholder="Repository URL..." />
+                <Input name="name" type="text" value={this.props.data.name} handleChange={this.handleChange} placeholder="Repository Name..." />
+                <Input name="url" type="url" value={this.props.data.url} handleChange={this.handleChange} placeholder="Repository URL..." />
                 <Button value={this.props.editing ? "EDIT" : "ADD"} onClick={this.handleAddEdit}/>
             </div>
         )

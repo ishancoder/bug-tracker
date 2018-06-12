@@ -3,13 +3,16 @@ let mongoose = require('mongoose');
 let repoSchema = new mongoose.Schema({
     name: {
         type: String,
-        unique: true,
+        unique: [true, "Repository name must be unique."],
         required: true,
     },
     url: {
         type: String,
         required: true,
-        matches: /^.+\..+\..+$/
+        unique: [true, "Repository URL must be unique."],
+        validate: [function(url) {
+            return /^.+\..+\..+$/.test(url);
+        }, "URL is not valid!"]
     },
     activeBugs: {
         type: Number,

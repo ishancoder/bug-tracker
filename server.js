@@ -28,6 +28,17 @@ app.use(morgan());
 app.use(jsonParser);
 app.use(urlencodedParser);
 app.use('/', routes);
+app.use(function(err, req, res, next) {
+    if(req.xhr) {
+        res.status(500).send(err.errors);
+    } else {
+        next(err);
+    }
+});
+app.use(function(err, req, res, next) {
+    res.status(500);
+    res.send(err.erros);
+});
 
 app.listen(3000, ()=>{
     console.log("Listening on port 3000....");
