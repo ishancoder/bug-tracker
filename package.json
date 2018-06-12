@@ -4,6 +4,7 @@
   "description": "A simple bug tracker for cause code",
   "main": "server.js",
   "scripts": {
+    "server": "node server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
