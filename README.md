@@ -4,6 +4,8 @@ This repository conatins the code for a minimal bug tracker built as a challenge
 First of all thanks CauseCode for considering me and giving me this challenge. I chose to build a BugTracker application from the given list and This is what I came up with.
 Don't expect it to be a highly featurefull BugTracker it's just a minimal one which gets the job done. However the UI is kind of pretty.
 
+** I'm a big fan of custom CSS. So this project is done using only CSS3 and no other frameworks like BootStrap, Foundation etc. is used **
+
 ## Process that I took to create this.
 1. First I chose to split up the project in Back End and Front End part and chose Node, Express, MongoDB(with Mongoose) as my Back End stack.
 2. I chose React to develop the Front End.
